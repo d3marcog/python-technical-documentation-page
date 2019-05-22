@@ -1,0 +1,135 @@
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+<link rel="stylesheet" href="style.css">
+<div class="main-body">
+<nav id="navbar">
+  <header>Python Documentation</header>
+  <ul>
+    <a class="nav-link" href="#Introduction"><li>Introduction</li></a>
+    <a class="nav-link" href="#Numbers"><li>Numbers</li></a>
+    <a class="nav-link" href="#Lists"><li>Lists</li></a>
+    <a class="nav-link" href="#Strings"><li>Strings</li></a>
+    <a class="nav-link" href="#Indexes_and_Slices"><li>Indexes and Slices</li></a>
+    <a class="nav-link" href="#Variables"><li>Variables</li></a>
+    <a class="nav-link" href="#Functions"><li>Functions</li></a>
+</nav>
+<main id="main-doc">
+  <section class="main-section" id="Introduction">
+    <header>Introduction</header> 
+    <p>Python is a general purpose programming language which is dynamically typed, interpreted, and known for its easy readability with great design principles.</p>
+  </section>
+  <section class="main-section" id="Numbers">
+    <header>Numbers</header>
+    <p>In the following examples, input and output are distinguished by the presence or absence of prompts (>>> and …): to repeat the example, you must type everything after the prompt, when the prompt appears; lines that do not begin with a prompt are output from the interpreter. Note that a secondary prompt on a line by itself in an example means you must type a blank line; this is used to end a multi-line command.<code>
+      >>> 2 + 2
+4
+>>> 50 - 5*6
+20
+>>> (50 - 5*6) / 4
+5.0
+>>> 8 / 5  # division always returns a floating point number
+1.6 </code></p>
+    <p>Many of the examples in this manual, even those entered at the interactive prompt, include comments. Comments in Python start with the hash character, #, and extend to the end of the physical line. A comment may appear at the start of a line or following whitespace or code, but not within a string literal. A hash character within a string literal is just a hash character. Since comments are to clarify code and are not interpreted by Python, they may be omitted when typing in examples.</p>
+  </section> 
+  <section class="main-section" id="Strings">
+    <header>Strings</header>
+    <p>Besides numbers, Python can also manipulate strings, which can be expressed in several ways. They can be enclosed in single quotes ('...') or double quotes ("...") with the same result [2]. \ can be used to escape quotes:<code>
+      >>> 'spam eggs'  # single quotes
+'spam eggs'
+>>> 'doesn\'t'  # use \' to escape the single quote...
+"doesn't"
+>>> "doesn't"  # ...or use double quotes instead
+"doesn't"
+>>> '"Yes," they said.'
+'"Yes," they said.'
+>>> "\"Yes,\" they said."
+'"Yes," they said.'
+>>> '"Isn\'t," they said.'
+'"Isn\'t," they said.'
+      </code></p>
+    <p>In the interactive interpreter, the output string is enclosed in quotes and special characters are escaped with backslashes. While this might sometimes look different from the input (the enclosing quotes could change), the two strings are equivalent. The string is enclosed in double quotes if the string contains a single quote and no double quotes, otherwise it is enclosed in single quotes. The print() function produces a more readable output, by omitting the enclosing quotes and by printing escaped and special characters:</p>
+  </section>
+  <section class="main-section" id="Lists">
+    <header>Lists</header>
+      <p>Python knows a number of compound data types, used to group together other values. The most versatile is the list, which can be written as a list of comma-separated values (items) between square brackets. Lists might contain items of different types, but usually the items all have the same type.</p>
+      <p>Lists also support operations like concatenation:
+        <code>
+         >>> squares = [1, 4, 9, 16, 25]
+>>> squares
+[1, 4, 9, 16, 25] 
+        </code>
+         </p>
+  </section>
+  <section class="main-section" id="Indexes_and_Slices">
+    <header>Indexes and Slices</header>
+    <p>How do indexes work?
+Now imagine you are in a library where the books are not arranged in a predetermined order. If you were tasked to find a book, you would have to go shelf by shelf to locate it. This may be fine when there are only a few shelves of books, but the process is very time consuming if it is a multi-storey library.
+
+On the other hand, assume that the books are now arranged by the last name of author. Given that you know the last name of the author for the book you are searching for, for example “Carnegie”, you may look for shelve for “C” and then search within the specific shelf. You have saved yourself from going through every single shelf.<code>
+      >>> squares = [1, 4, 9, 16, 25]
+>>> squares
+[1, 4, 9, 16, 25]
+      >>> squares[0]  # indexing returns the item
+1
+>>> squares[-1]
+25
+      </code></p>
+    <p> Slice objects have read-only data attributes start, stop and step which merely return the argument values (or their default). They have no other explicit functionality; however they are used by Numerical Python and other third party extensions. Slice objects are also generated when extended indexing syntax is used. For example: a[start:stop:step] or a[start:stop, i]. See itertools.islice() for an alternate version that returns an iterator.<code>>>> squares = [1, 4, 9, 16, 25]
+>>> squares
+[1, 4, 9, 16, 25]
+      >>> squares[-3:]  # slicing returns a new list
+[9, 16, 25]
+     >>> squares[:]
+[1, 4, 9, 16, 25]
+ </code></p>
+     </section> 
+      <section class="main-section" id="Variables">
+    <header>Variables</header>
+    <p>Unlike other programming languages, Python has no command for declaring a variable.
+
+A variable is created the moment you first assign a value to it.
+      <code>x = 5
+y = "John"
+print(x)
+print(y)</code></p>
+    <p>A variable can have a short name (like x and y) or a more descriptive name (age, carname, total_volume). Rules for Python variables:
+      <ul>
+        <li>A variable name must start with a letter or the underscore character</li>
+        <li>A variable name cannot start with a number</li>
+       <li> A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ )</li>
+       <li> Variable names are case-sensitive (age, Age and AGE are three different variables)</li>
+        </ul>
+      <code>x = "awesome"
+print("Python is " + x)</code>
+        </p>
+  </section>
+  <section class="main-section" id="Functions">
+    <header>Functions</header>
+    <p>A function allows you to define a reusable block of code that can be executed many times within your program.
+
+Functions allow you to create more modular and DRY solutions to complex problems.
+
+While Python already provides many built-in functions such as print() and len(), you can also define your own functions to use within your projects.
+
+One of the great advantages of using functions in your code is that it reduces the overall number of lines of code in your project.<code>
+      def my_function():
+  print("Hello from a function")
+      </code></p>
+    <p>Syntax
+In Python, a function definition has the following features:
+<ul>
+<li>The keyword def</li>
+  <li>a function name</li>
+<li>paranthesis’()’, and within paranthesis input parameters,although the input parameters are optional.</li>
+  <li>a colon ’:’</li>
+  <li>some block of code to execute</li>
+  <li>a return statement (optional)</li>
+  <ul>
+  <code>
+      def sayHello():
+  print("Hello!")
+    </code>
+    </p>
+  </section> 
+</main>
+      </div>
+
